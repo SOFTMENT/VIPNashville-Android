@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+
+        android:id="@+id/barName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@+id/barImage"
+        android:fontFamily="@font/panton_narrow_bold"
+        android:lines="1"
+        android:text="Raised by Wolves"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/barImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/barreal"
+        app:riv_corner_radius="6dp" />
+
+        <LinearLayout
+            android:id="@+id/ratingLL"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_below="@+id/barName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/barImage"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:src="@drawable/ic_baseline_star_24"
+                />
+            <TextView
+                android:textColor="@color/light_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginStart="4dp"
+                android:text="4.8"
+                android:fontFamily="@font/panton_narrow_semibold"
+                />
+
+            <TextView
+                android:textColor="#999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="|"
+                android:fontFamily="@font/panton_narrow_semibold"
+                />
+
+            <ImageView
+                android:layout_marginStart="6dp"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:src="@drawable/ic_outline_location_on_24"
+                />
+            <TextView
+                android:maxLines="2"
+                android:lineSpacingExtra="3dp"
+                android:textColor="@color/light_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginStart="4dp"
+                android:text="233/9b Near sagar public school, Bhoapl"
+                android:fontFamily="@font/panton_narrow_semibold"
+                />
+
+
+
+        </LinearLayout>
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingLL"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="2dp"
+        android:layout_toEndOf="@+id/barImage">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@+id/forward"
+            android:ellipsize="end"
+            android:fontFamily="@font/panton_narrow_semibold"
+            android:lineSpacingExtra="3dp"
+            android:maxLines="2"
+            android:text="Old-world decor &amp; oak-clad walls give this hidden cocktail bar a sense of mystery &amp; opulence."
+            android:textColor="#999"
+            android:textSize="12sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/forward"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="6dp"
+            android:background="#fff"
+            app:cardCornerRadius="8dp">
+
+            <ImageView
+
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center"
+                android:src="@drawable/next" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    </RelativeLayout>

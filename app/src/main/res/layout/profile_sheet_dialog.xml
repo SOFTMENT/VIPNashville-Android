@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/sheet">
+    <View
+        android:layout_width="77dp"
+        android:layout_height="2dp"
+        android:background="@drawable/corner_radius_12"
+        android:backgroundTint="@color/light_gray"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        >
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/profilePic"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@mipmap/ic_launcher"
+            app:riv_corner_radius="8dp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/profilePic"
+            android:fontFamily="@font/panton_narrow_bold"
+            android:text="Darwinning"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <TextView
+
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/profilePic"
+            android:fontFamily="@font/panton_narrow_semibold"
+            android:text="support@darwinning.in"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        >
+
+    <RelativeLayout
+        android:id="@+id/shareApp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/panton_narrow_bold"
+            android:text="Share App"
+            android:textColor="@color/light_gray"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rateApp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/panton_narrow_bold"
+                android:text="Rate Us"
+                android:textColor="@color/light_gray"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/privacyPolicy"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/panton_narrow_bold"
+                android:text="Privacy Policy"
+                android:textColor="@color/light_gray"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/termsAndConditions"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/panton_narrow_bold"
+                android:text="Terms &amp; Conditions"
+                android:textColor="@color/light_gray"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/panton_narrow_bold"
+                android:text="Logout"
+                android:textColor="@color/light_gray"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "695996231757",
+    "project_id": "vip-nashville-23c7f",
+    "storage_bucket": "vip-nashville-23c7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695996231757:android:577b0b42de825ab83d2c04",
+        "android_client_info": {
+          "package_name": "in.softment.nashville"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695996231757-dkd7uc088d75tbo1l49oscd0p40mcq3m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcIOCWJ-Q1_cnsaVci1FAZYnCuKRkvgl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695996231757-dkd7uc088d75tbo1l49oscd0p40mcq3m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

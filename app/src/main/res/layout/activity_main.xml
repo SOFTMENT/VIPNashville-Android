@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+
+      >
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        >
+    <TextView
+        android:id="@+id/hiname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/panton_narrow_bold"
+        android:text="Hi Tyler Max"
+        android:textColor="@color/black"
+        android:textSize="22sp" />
+    <LinearLayout
+        android:visibility="gone"
+       android:layout_marginStart="-1dp"
+        android:id="@+id/locationLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hiname"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+
+        >
+        <ImageView
+
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_baseline_location_on_24"
+            />
+        <TextView
+
+
+            android:id="@+id/location"
+            android:fontFamily="@font/panton_narrow_regular"
+            android:textColor="@color/light_gray"
+            android:layout_marginStart="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="82MP+XQ5, Tarana"
+            />
+    </LinearLayout>
+    </LinearLayout>
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/profile"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        app:riv_corner_radius="12dp" />
+    <RelativeLayout
+        android:id="@+id/searchRR"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_toStartOf="@+id/searchBtn"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="4dp"
+            android:elevation="3dp"
+            app:cardCornerRadius="8dp"
+            android:layout_marginBottom="3dp"
+            >
+
+            <EditText
+                android:inputType="text"
+                android:id="@+id/searchEditText"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:textSize="13sp"
+                android:fontFamily="@font/panton_narrow_regular"
+                android:hint="Search by name and location"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/edittext_back"
+                android:backgroundTint="@color/white"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="3dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="3dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_search_24" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+<RelativeLayout
+    android:id="@+id/filterRR"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/searchRR"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="24dp"
+    android:layout_marginEnd="20dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/panton_narrow_bold"
+        android:text="Bar For You"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/filter"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_baseline_filter_list_24" />
+
+</RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:scrollbars="none"
+        android:nestedScrollingEnabled="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/filterRR"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp" />
+
+
+
+
+</RelativeLayout>
+
+  </androidx.core.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/no_bar_available_LL"
+        android:visibility="gone"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/wine"
+            />
+        <TextView
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/panton_narrow_semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Bar Available"
+            />
+
+    </LinearLayout>
+</RelativeLayout>
