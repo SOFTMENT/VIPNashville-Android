@@ -14,7 +14,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Date;
 
-import in.softment.nashville.Model.UserModel;
 import in.softment.nashville.Util.ProgressHud;
 import in.softment.nashville.Util.Services;
 
@@ -59,13 +58,13 @@ public class SignUpActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             ProgressHud.dialog.dismiss();
                             if (task.isSuccessful()) {
-                                UserModel userModel = new UserModel();
-                                userModel.email = sEmail;
-                                userModel.uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                                userModel.fullName = sName;
-                                userModel.registredAt = new Date();
-                                userModel.regiType = "custom";
-                                Services.addUserDataOnServer(SignUpActivity.this,userModel);
+//                                UserModel userModel = new UserModel();
+//                                userModel.email = sEmail;
+//                                userModel.uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//                                userModel.fullName = sName;
+//                                userModel.registredAt = new Date();
+//                                userModel.regiType = "custom";
+//                                Services.addUserDataOnServer(SignUpActivity.this,userModel);
                             }
                             else {
                                 Services.showDialog(SignUpActivity.this,"ERROR",task.getException().getLocalizedMessage());

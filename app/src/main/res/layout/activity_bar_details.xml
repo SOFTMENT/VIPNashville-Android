@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     xmlns:android="http://schemas.android.com/apk/res/android">
 <RelativeLayout
     android:layout_width="match_parent"
@@ -13,8 +14,7 @@
 
         android:id="@+id/headRR"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        >
+        android:layout_height="60dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/back"
@@ -42,16 +42,16 @@
             android:layout_centerInParent="true"
             android:fontFamily="@font/panton_narrow_bold"
             android:text="V.I.P Nashville"
-            android:textColor="@color/main_color"
+            android:textColor="@color/white"
             android:textSize="17sp" />
 
         <androidx.cardview.widget.CardView
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="16dp"
             android:id="@+id/more"
             android:layout_width="36dp"
             android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
             android:background="#fff"
             app:cardCornerRadius="8dp"
             app:cardElevation="2dp">
@@ -75,8 +75,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/barreal"
-        />
+        android:src="@drawable/barreal" />
 
 
     <TextView
@@ -91,7 +90,7 @@
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/panton_narrow_bold"
         android:text="Raised by Wolves"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="16sp" />
 
 
@@ -114,7 +113,8 @@
             android:src="@drawable/ic_baseline_star_24"
             />
         <TextView
-            android:textColor="@color/light_gray"
+            android:id="@+id/rating"
+            android:textColor="#d9d9d9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="13sp"
@@ -139,9 +139,10 @@
             android:src="@drawable/ic_outline_location_on_24"
             />
         <TextView
+            android:id="@+id/address"
             android:maxLines="2"
             android:lineSpacingExtra="3dp"
-            android:textColor="@color/light_gray"
+            android:textColor="#d9d9d9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="13sp"
@@ -170,7 +171,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/panton_narrow_bold"
         android:text="Description"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="16sp" />
 
     <TextView
@@ -184,7 +185,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/panton_narrow_regular"
         android:text="Old-world decor &amp; oak-clad walls give this hidden cocktail bar a sense of mystery &amp; opulence."
-        android:textColor="@color/light_gray"
+        android:textColor="#d9d9d9"
         android:textSize="14sp" />
 
     <androidx.cardview.widget.CardView

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/membership_sheet">
+    <View
+        android:layout_width="77dp"
+        android:layout_height="2dp"
+        android:background="@drawable/corner_radius_12"
+        android:backgroundTint="@color/light_gray"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="24dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/animation_view"
+        app:lottie_rawRes="@raw/premium"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+    <TextView
+
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/panton_narrow_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Upgrade to premium"
+        android:textSize="22sp"
+        />
+
+    <TextView
+        android:textColor="#888"
+        android:fontFamily="@font/panton_narrow_regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:text="Subscribe to V.I.P Nashville pro membership and get access to all city's bar."
+        android:textSize="14sp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        />
+
+    <TextView
+        android:textColor="#E91E63"
+        android:fontFamily="@font/panton_narrow_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:text="$19.99 / month"
+        android:textSize="20sp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/activateBtn"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_back"
+        android:backgroundTint="@color/main_color"
+        android:fontFamily="@font/panton_narrow_semibold"
+        android:text="Activate Now"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/termsAndConditions"
+            android:layout_marginStart="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Terms Of Use"
+            android:textSize="11sp"
+            android:fontFamily="@font/panton_narrow_regular"
+
+            />
+        <TextView
+            android:layout_marginStart="3.5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#888"
+            android:text="And"
+            android:textSize="11sp"
+            android:fontFamily="@font/panton_narrow_regular"
+
+            />
+        <TextView
+            android:id="@+id/privacyPolicy"
+            android:layout_marginStart="3.5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Privacy Policy"
+            android:textSize="11sp"
+            android:fontFamily="@font/panton_narrow_regular"
+
+            />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

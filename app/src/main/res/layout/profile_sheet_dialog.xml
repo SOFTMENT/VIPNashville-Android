@@ -30,28 +30,16 @@
             app:riv_corner_radius="8dp" />
 
         <TextView
+            android:layout_centerVertical="true"
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_toEndOf="@+id/profilePic"
             android:fontFamily="@font/panton_narrow_bold"
-            android:text="Darwinning"
+            android:text="VIP Nashville"
             android:textColor="@color/black"
             android:textSize="13sp" />
-
-        <TextView
-
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/name"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="2dp"
-            android:layout_toEndOf="@+id/profilePic"
-            android:fontFamily="@font/panton_narrow_semibold"
-            android:text="support@darwinning.in"
-            android:textSize="10sp" />
 
     </RelativeLayout>
     <LinearLayout
@@ -124,23 +112,6 @@
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/panton_narrow_bold"
                 android:text="Terms &amp; Conditions"
-                android:textColor="@color/light_gray"
-                android:textSize="13sp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/logout"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:fontFamily="@font/panton_narrow_bold"
-                android:text="Logout"
                 android:textColor="@color/light_gray"
                 android:textSize="13sp" />
 

@@ -38,7 +38,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-import in.softment.nashville.Model.UserModel;
 import in.softment.nashville.Util.ProgressHud;
 import in.softment.nashville.Util.Services;
 
@@ -168,7 +167,7 @@ public class SignInActivity extends AppCompatActivity {
                                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                                 if (user != null) {
                                     if (user.isEmailVerified()) {
-                                        Services.getCurrentUserData(SignInActivity.this,user.getUid(),true);
+                                       // Services.getCurrentUserData(SignInActivity.this,user.getUid(),true);
                                     }
                                     else {
                                         Services.sentEmailVerificationLink(SignInActivity.this);
@@ -220,23 +219,23 @@ public class SignInActivity extends AppCompatActivity {
                                         ProgressHud.dialog.dismiss();
                                         if (task.isSuccessful()) {
                                             if (task.getResult() != null && task.getResult().exists()) {
-                                                Services.getCurrentUserData(SignInActivity.this, authResult.getUser().getUid(),true);
+                                             //   Services.getCurrentUserData(SignInActivity.this, authResult.getUser().getUid(),true);
                                             }
                                             else {
                                                 String emailId = "";
                                                 for (UserInfo firUserInfo : FirebaseAuth.getInstance().getCurrentUser().getProviderData()){
                                                     emailId = firUserInfo.getEmail();
                                                 }
-
-                                                UserModel userModel = new UserModel();
-                                                userModel.uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                                                userModel.email = emailId;
-                                                userModel.fullName = authResult.getAdditionalUserInfo().getUsername();
-                                                userModel.registredAt = new Date();
-                                                userModel.regiType = "apple";
-
-
-                                                Services.addUserDataOnServer(SignInActivity.this,userModel);
+//
+//                                                UserModel userModel = new UserModel();
+//                                                userModel.uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//                                                userModel.email = emailId;
+//                                                userModel.fullName = authResult.getAdditionalUserInfo().getUsername();
+//                                                userModel.registredAt = new Date();
+//                                                userModel.regiType = "apple";
+//
+//
+//                                                Services.addUserDataOnServer(SignInActivity.this,userModel);
                                             }
                                         }
 
@@ -256,76 +255,76 @@ public class SignInActivity extends AppCompatActivity {
                         });
     }
 
-
-    private void firebaseAuth(AuthCredential credential) {
-
-        ProgressHud.show(this,"");
-        FirebaseAuth.getInstance().signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        ProgressHud.dialog.dismiss();
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            if (FirebaseAuth.getInstance().getCurrentUser() != null){
-                                FirebaseFirestore.getInstance().collection("Users").document(FirebaseAuth.getInstance().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                        if (task.isSuccessful()) {
-                                            if (task.getResult() != null && task.getResult().exists()) {
-                                                Services.getCurrentUserData(SignInActivity.this,FirebaseAuth.getInstance().getCurrentUser().getUid(),true);
-                                            }
-                                            else {
-
-                                                String emailId = "";
-                                                for (UserInfo firUserInfo : FirebaseAuth.getInstance().getCurrentUser().getProviderData()){
-                                                    emailId = firUserInfo.getEmail();
-                                                }
-
-                                                UserModel userModel = new UserModel();
-                                                userModel.uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                                                userModel.email = emailId;
-                                                userModel.fullName = FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
-                                                userModel.registredAt = new Date();
-                                                userModel.regiType = "google";
-
-
-                                                Services.addUserDataOnServer(SignInActivity.this,userModel);
-                                            }
-                                        }
-                                        else {
-                                            Services.showDialog(SignInActivity.this,"ERROR",task.getException().getLocalizedMessage());
-                                        }
-                                    }
-                                });
-
-                            }
-
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Services.showDialog(SignInActivity.this,"ERROR", Objects.requireNonNull(task.getException()).getLocalizedMessage());
-                        }
-                    }
-                });
-    }
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == 909) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                // Google Sign In was successful, authenticate with Firebase
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
-                firebaseAuth(credential);
-            } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
-                Services.showDialog(SignInActivity.this,"ERROR",e.getLocalizedMessage());
-            }
-        }
-
-
-    }
+//
+//    private void firebaseAuth(AuthCredential credential) {
+//
+//        ProgressHud.show(this,"");
+//        FirebaseAuth.getInstance().signInWithCredential(credential)
+//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        ProgressHud.dialog.dismiss();
+//                        if (task.isSuccessful()) {
+//                            // Sign in success, update UI with the signed-in user's information
+//                            if (FirebaseAuth.getInstance().getCurrentUser() != null){
+//                                FirebaseFirestore.getInstance().collection("Users").document(FirebaseAuth.getInstance().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                                    @Override
+//                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                                        if (task.isSuccessful()) {
+//                                            if (task.getResult() != null && task.getResult().exists()) {
+//                                                Services.getCurrentUserData(SignInActivity.this,FirebaseAuth.getInstance().getCurrentUser().getUid(),true);
+//                                            }
+//                                            else {
+//
+//                                                String emailId = "";
+//                                                for (UserInfo firUserInfo : FirebaseAuth.getInstance().getCurrentUser().getProviderData()){
+//                                                    emailId = firUserInfo.getEmail();
+//                                                }
+//
+//                                                UserModel userModel = new UserModel();
+//                                                userModel.uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//                                                userModel.email = emailId;
+//                                                userModel.fullName = FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
+//                                                userModel.registredAt = new Date();
+//                                                userModel.regiType = "google";
+//
+//
+//                                                Services.addUserDataOnServer(SignInActivity.this,userModel);
+//                                            }
+//                                        }
+//                                        else {
+//                                            Services.showDialog(SignInActivity.this,"ERROR",task.getException().getLocalizedMessage());
+//                                        }
+//                                    }
+//                                });
+//
+//                            }
+//
+//                        } else {
+//                            // If sign in fails, display a message to the user.
+//                            Services.showDialog(SignInActivity.this,"ERROR", Objects.requireNonNull(task.getException()).getLocalizedMessage());
+//                        }
+//                    }
+//                });
+//    }
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+//        if (requestCode == 909) {
+//            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+//            try {
+//                // Google Sign In was successful, authenticate with Firebase
+//                GoogleSignInAccount account = task.getResult(ApiException.class);
+//                AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
+//                firebaseAuth(credential);
+//            } catch (ApiException e) {
+//                // Google Sign In failed, update UI appropriately
+//                Services.showDialog(SignInActivity.this,"ERROR",e.getLocalizedMessage());
+//            }
+//        }
+//
+//
+//    }
 }

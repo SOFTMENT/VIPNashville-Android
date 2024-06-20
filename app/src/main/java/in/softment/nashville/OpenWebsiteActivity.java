@@ -17,6 +17,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 
 public class OpenWebsiteActivity extends AppCompatActivity {
@@ -25,12 +26,22 @@ public class OpenWebsiteActivity extends AppCompatActivity {
     private WebView myWebView;
     private FrameLayout frameLayout;
     private ProgressBar progressBar;
+    private TextView title;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_website);
 
+        findViewById(R.id.back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        title = findViewById(R.id.title);
+        title.setText(getIntent().getStringExtra("name"));
 
         final SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.swipe);
         myWebView = (WebView) findViewById(R.id.webpage);
@@ -95,7 +106,7 @@ public class OpenWebsiteActivity extends AppCompatActivity {
         frameLayout = findViewById(R.id.frame);
         progressBar = findViewById(R.id.progressbar);
 
-        myWebView.loadUrl("https://raisedxwolves.com");
+        myWebView.loadUrl(getIntent().getStringExtra("url"));
         progressBar.setMax(100);
         progressBar.setProgress(0);
 

@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,7 +16,7 @@
         android:fontFamily="@font/panton_narrow_bold"
         android:lines="1"
         android:text="Raised by Wolves"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="15sp" />
 
     <com.makeramen.roundedimageview.RoundedImageView
@@ -32,63 +30,61 @@
         android:src="@drawable/barreal"
         app:riv_corner_radius="6dp" />
 
-        <LinearLayout
-            android:id="@+id/ratingLL"
-            android:gravity="center"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="8dp"
-            android:layout_below="@+id/barName"
+    <LinearLayout
+        android:id="@+id/ratingLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/barName"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@+id/barImage"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:src="@drawable/ic_baseline_star_24" />
+
+        <TextView
+            android:id="@+id/rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/barImage"
-            android:orientation="horizontal"
-            >
-            <ImageView
-                android:layout_width="17dp"
-                android:layout_height="17dp"
-                android:src="@drawable/ic_baseline_star_24"
-                />
-            <TextView
-                android:textColor="@color/light_gray"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:layout_marginStart="4dp"
-                android:text="4.8"
-                android:fontFamily="@font/panton_narrow_semibold"
-                />
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/panton_narrow_semibold"
+            android:text="4.8"
+            android:textColor="#D9D9D9"
+            android:textSize="12sp" />
 
-            <TextView
-                android:textColor="#999"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:text="|"
-                android:fontFamily="@font/panton_narrow_semibold"
-                />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:fontFamily="@font/panton_narrow_semibold"
+            android:text="|"
+            android:textColor="#999" />
 
-            <ImageView
-                android:layout_marginStart="6dp"
-                android:layout_width="17dp"
-                android:layout_height="17dp"
-                android:src="@drawable/ic_outline_location_on_24"
-                />
-            <TextView
-                android:maxLines="2"
-                android:lineSpacingExtra="3dp"
-                android:textColor="@color/light_gray"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:layout_marginStart="4dp"
-                android:text="233/9b Near sagar public school, Bhoapl"
-                android:fontFamily="@font/panton_narrow_semibold"
-                />
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/ic_outline_location_on_24" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/panton_narrow_semibold"
+            android:lineSpacingExtra="3dp"
+            android:maxLines="2"
+            android:text="233/9b Near sagar public school, Bhoapl"
+            android:textColor="#D9D9D9"
+            android:textSize="12sp" />
 
 
-
-        </LinearLayout>
+    </LinearLayout>
 
 
     <RelativeLayout
@@ -102,6 +98,7 @@
         android:layout_toEndOf="@+id/barImage">
 
         <TextView
+            android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -112,7 +109,7 @@
             android:lineSpacingExtra="3dp"
             android:maxLines="2"
             android:text="Old-world decor &amp; oak-clad walls give this hidden cocktail bar a sense of mystery &amp; opulence."
-            android:textColor="#999"
+            android:textColor="#D9D9D9"
             android:textSize="12sp" />
 
         <androidx.cardview.widget.CardView
@@ -120,7 +117,10 @@
             android:layout_width="26dp"
             android:layout_height="26dp"
             android:layout_alignParentEnd="true"
-            android:layout_margin="6dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
             android:background="#fff"
             app:cardCornerRadius="8dp">
 

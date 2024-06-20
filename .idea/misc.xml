@@ -9,19 +9,24 @@
         <entry key="app/src/main/res/drawable-v24/sheet_background.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable-v24/spinner.xml" value="0.1555" />
         <entry key="app/src/main/res/drawable/btn_back.xml" value="0.1555" />
+        <entry key="app/src/main/res/drawable/circleview.xml" value="0.175" />
+        <entry key="app/src/main/res/drawable/cityback.xml" value="0.164" />
+        <entry key="app/src/main/res/drawable/citybackwhite.xml" value="0.164" />
         <entry key="app/src/main/res/drawable/corner_radius_12.xml" value="0.1565" />
+        <entry key="app/src/main/res/drawable/deletebtnback.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/edittext_back.xml" value="0.1555" />
         <entry key="app/src/main/res/drawable/progress_hud_bg.xml" value="0.1555" />
         <entry key="app/src/main/res/drawable/sheet_background.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/spinner.xml" value="0.1555" />
-        <entry key="app/src/main/res/layout/activity_bar_details.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_bar_details.xml" value="0.46076507568359376" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_open_website.xml" value="0.17300724637681159" />
-        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.27142441392610855" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/bar_view.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/bar_view.xml" value="0.35348837209302325" />
         <entry key="app/src/main/res/layout/error_message_layout.xml" value="0.1716485507246377" />
+        <entry key="app/src/main/res/layout/membership_sheet_dialog.xml" value="0.375" />
         <entry key="app/src/main/res/layout/profile_sheet_dialog.xml" value="0.335" />
         <entry key="app/src/main/res/layout/progress_hud.xml" value="0.1716485507246377" />
         <entry key="app/src/main/res/menu/filter_menu.xml" value="0.2490740740740741" />

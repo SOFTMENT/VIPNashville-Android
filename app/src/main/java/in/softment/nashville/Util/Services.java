@@ -38,7 +38,6 @@ import java.util.Map;
 import java.util.TimeZone;
 
 import in.softment.nashville.MainActivity;
-import in.softment.nashville.Model.UserModel;
 import in.softment.nashville.R;
 import in.softment.nashville.SignInActivity;
 import in.softment.nashville.SignUpActivity;
@@ -326,106 +325,6 @@ public class Services {
 
 
 
-    public static void addUserDataOnServer(Context context, UserModel userModel){
-
-        ProgressHud.show(context,"");
-        FirebaseFirestore.getInstance().collection("Users").document(userModel.getUid()).set(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                ProgressHud.dialog.dismiss();
-                if (task.isSuccessful()) {
-                    if (userModel.regiType.equalsIgnoreCase("custom")) {
-                        if (FirebaseAuth.getInstance().getCurrentUser().isEmailVerified()) {
-                            Services.getCurrentUserData(context,FirebaseAuth.getInstance().getCurrentUser().getUid(),true);
-                        }
-                        else {
-                            sentEmailVerificationLink(context);
-                        }
-                    }
-                    else {
-                        Services.getCurrentUserData(context,FirebaseAuth.getInstance().getCurrentUser().getUid(),true);
-                    }
-
-                }
-                else {
-                    Services.showDialog(context,"ERROR",task.getException().getLocalizedMessage());
-                }
-            }
-        });
-    }
-
-
-    public static void getCurrentUserData(Context context,String uid, Boolean showProgress) {
-
-        if (showProgress) {
-            ProgressHud.show(context,"");
-        }
-
-        FirebaseFirestore.getInstance().collection("Users").document(uid).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-
-
-                if (showProgress) {
-                    ProgressHud.dialog.dismiss();
-                }
-
-                if (task.isSuccessful()) {
-                    DocumentSnapshot documentSnapshot = task.getResult();
-                    if (documentSnapshot != null && documentSnapshot.exists()) {
-                        documentSnapshot.toObject(UserModel.class);
-
-                        if (UserModel.data != null) {
-
-                            if (UserModel.data.isAdmin()) {
-                                Intent intent = new Intent(context, MainActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                context.startActivity(intent);
-
-                            }
-                            else {
-                                Intent intent = new Intent(context, MainActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                context.startActivity(intent);
-                            }
-
-
-                        }
-                        else  {
-                            showCenterToast(context,"Something Went Wrong. Code - 101");
-                        }
-                    }
-                    else {
-                        FirebaseAuth.getInstance().getCurrentUser().delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    showDialog(context,"User Not Found","Your account is not available. Please create your account.");
-                                }
-                                else {
-                                    showDialog(context,"ERROR",task.getException().getLocalizedMessage());
-                                }
-                            }
-                        });
-                    }
-                }
-                else {
-                    FirebaseAuth.getInstance().getCurrentUser().delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                showDialog(context,"User Not Found","Your account is not available. Please create your account.");
-                            }
-                            else {
-                                showDialog(context,"ERROR",task.getException().getLocalizedMessage());
-                            }
-                        }
-                    });
-                }
-
-            }
-        });
-    }
 
     public  static Date getDateFromTimestamp(long time) {
         Calendar cal = Calendar.getInstance();

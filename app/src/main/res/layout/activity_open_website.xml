@@ -5,10 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+<RelativeLayout
+    android:background="#000"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:id="@+id/toolbar"
 
+    >
+    <androidx.cardview.widget.CardView
+        android:id="@+id/back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:background="#fff"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp">
+
+        <ImageView
+
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:src="@drawable/back" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/panton_narrow_semibold"
+        android:text="Nashville"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+</RelativeLayout>
 
     <FrameLayout
-
+        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="@android:color/transparent"

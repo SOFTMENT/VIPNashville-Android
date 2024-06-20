@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF"
+    android:background="#000"
     tools:context=".SignUpActivity">
 
 
@@ -17,8 +17,8 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="#fff"
-        app:cardElevation="2dp"
-        app:cardCornerRadius="8dp">
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp">
 
         <ImageView
 
@@ -30,14 +30,14 @@
 
 
 
-    <com.makeramen.roundedimageview.RoundedImageView
+    <ImageView
         app:riv_corner_radius="44dp"
         android:id="@+id/topImage"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/splash" />
 
     <TextView
         android:id="@+id/welcomeBack"
@@ -48,7 +48,7 @@
         android:layout_marginTop="34dp"
         android:fontFamily="@font/panton_narrow_regular"
         android:text="JOIN THE EVENT"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="13sp" />
 
     <TextView
@@ -60,7 +60,7 @@
         android:layout_marginTop="4dp"
         android:fontFamily="@font/panton_narrow_bold"
         android:text="Create An Account"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <EditText

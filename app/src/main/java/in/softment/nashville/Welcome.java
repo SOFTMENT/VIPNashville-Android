@@ -12,6 +12,7 @@ import android.view.WindowManager;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GetTokenResult;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -32,41 +33,62 @@ public class Welcome extends AppCompatActivity {
         FirebaseMessaging.getInstance().subscribeToTopic("vipnashville");
 
 
-        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-            FirebaseAuth.getInstance().getCurrentUser().getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
-                @Override
-                public void onComplete(@NonNull Task<GetTokenResult> task) {
-                    if (task.isSuccessful()) {
-                        String providerID = task.getResult().getSignInProvider();
-
-                        if (providerID.equalsIgnoreCase("password")) {
-                            if (FirebaseAuth.getInstance().getCurrentUser().isEmailVerified()) {
-                                Services.getCurrentUserData(Welcome.this, FirebaseAuth.getInstance().getCurrentUser().getUid(), false);
-                            }
-                            else {
-                                Intent intent = new Intent(Welcome.this, SignInActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                                finish();
-                            }
-                        }
-                        else {
-
-                            Services.getCurrentUserData(Welcome.this, FirebaseAuth.getInstance().getCurrentUser().getUid(), false);
-                        }
-
-                    }
-                }
-            });
-
-        }
-        else {
-            Intent intent = new Intent(Welcome.this, SignInActivity.class);
+        if (mAuth.getCurrentUser() != null) {
+            Intent intent = new Intent(Welcome.this,MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
+
         }
+        else {
+            mAuth.signInAnonymously().addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Intent intent = new Intent(Welcome.this, MainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                            finish();
+                        }
+                        else {
+                            Services.showDialog(Welcome.this,"ERROR",task.getException().getLocalizedMessage());
+                        }
+                }
+            });
+        }
+
+
+
+
+//        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+//
+//            FirebaseAuth.getInstance().getCurrentUser().getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
+//                @Override
+//                public void onComplete(@NonNull Task<GetTokenResult> task) {
+//                    if (task.isSuccessful()) {
+//                        String providerID = task.getResult().getSignInProvider();
+//
+//                        if (providerID.equalsIgnoreCase("password")) {
+//                            if (FirebaseAuth.getInstance().getCurrentUser().isEmailVerified()) {
+//                                Services.getCurrentUserData(Welcome.this, FirebaseAuth.getInstance().getCurrentUser().getUid(), false);
+//                            }
+//                            else {
+//
+//                            }
+//                        }
+//                        else {
+//
+//                            Services.getCurrentUserData(Welcome.this, FirebaseAuth.getInstance().getCurrentUser().getUid(), false);
+//                        }
+//
+//                    }
+//                }
+//            });
+//
+//        }
+//
 
 
     }

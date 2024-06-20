@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF"
+    android:background="#000"
     tools:context=".SignInActivity">
 
-    <com.makeramen.roundedimageview.RoundedImageView
+    <ImageView
         app:riv_corner_radius="44dp"
         android:id="@+id/topImage"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/splash" />
 
     <TextView
         android:id="@+id/welcomeBack"
@@ -25,8 +25,9 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/panton_narrow_regular"
         android:text="WELCOME BACK"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="13sp" />
+
     <TextView
         android:id="@+id/account_log_in"
         android:layout_width="wrap_content"
@@ -34,81 +35,78 @@
         android:layout_below="@+id/welcomeBack"
         android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
-        android:text="Account Log In"
         android:fontFamily="@font/panton_narrow_bold"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        />
+        android:text="Account Log In"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
     <LinearLayout
         android:id="@+id/loginLL"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="46dp"
         android:layout_below="@+id/account_log_in"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
-        >
+        android:orientation="horizontal"
+        android:weightSum="2">
 
         <LinearLayout
             android:id="@+id/googleSignIn"
-            android:layout_marginEnd="5dp"
-            android:background="@drawable/btn_back"
-            android:backgroundTint="#3306003C"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_back"
+            android:backgroundTint="#121212"
             android:gravity="center"
-            >
+            android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:src="@drawable/google"
                 android:layout_marginEnd="4dp"
-                />
+                android:src="@drawable/google"
+                app:tint="#D7CD084B" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Login With Google"
-                android:textColor="@color/main_color"
-                android:fontFamily="@font/panton_narrow_semibold"
-                android:textSize="12sp"
                 android:layout_marginStart="4dp"
-                />
+                android:fontFamily="@font/panton_narrow_semibold"
+                android:text="Login With Google"
+                android:textColor="#D7CD084B"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
 
             android:id="@+id/apple"
-            android:layout_marginStart="5dp"
-            android:background="@drawable/btn_back"
-            android:backgroundTint="#3306003C"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_back"
+            android:backgroundTint="#121212"
             android:gravity="center"
-            >
+            android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:src="@drawable/apple"
                 android:layout_marginEnd="4dp"
-                />
+                android:src="@drawable/apple"
+                app:tint="#D7CD084B" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign In With Apple"
-                android:textColor="@color/main_color"
-                android:fontFamily="@font/panton_narrow_semibold"
-                android:textSize="12sp"
                 android:layout_marginStart="4dp"
-                />
+                android:fontFamily="@font/panton_narrow_semibold"
+                android:text="Sign In With Apple"
+                android:textColor="#D7CD084B"
+                android:textSize="12sp" />
         </LinearLayout>
-
 
 
     </LinearLayout>
